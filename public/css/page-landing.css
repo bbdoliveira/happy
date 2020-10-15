@@ -10,32 +10,11 @@
 #container {
     margin: auto;
 
-    width: 90%;
+    width: min(90%, 112rem);
 }
 
 .location, h1, .visit p {
     height: 16vh;
-}
-
-.visit a {
-    width: 8rem;
-    height: 8rem;
-    background: #ffd666;
-
-    border: none;
-    border-radius: 3rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: auto;
-
-    transition: background 200ms;
-}
-
-.visit a:hover {
-    background: #96feff;
 }
 
 #logo {
@@ -55,5 +34,45 @@ main h1 {
 }
 
 .visit a {
+    width: 8rem;
+    height: 8rem;
+    background: #ffd666;
+
+    border: none;
+    border-radius: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    transition: background 200ms;
+
     animation-delay: 250ms;
+}
+
+.visit a:hover {
+    background: #96feff;
+}
+
+/* desktop version*/
+
+@media (min-width: 760px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .location, h1, .visit p {
+        height: initial;
+        text-align: initial;
+    }
+
+    .location {
+        text-align: right;
+    }
+
+
 }
