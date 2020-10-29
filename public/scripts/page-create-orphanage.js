@@ -42,10 +42,40 @@ function addPhotoField() {
     if (input.value == "") {
         return
     }
-    
+
     // limpar o campo antes de adicionar ao conatiner de imagens
     input.value = ""
 
     // adicionar o clone ao container de #images
     container.appendChild(newFieldContainer)
 }
+
+function deleteField(event) {
+    const span = event.currentTarget
+    const fieldsContainer = document.querySelectorAll('.new-upload')
+
+    if (fieldsContainer.length < 2) {
+        //limpar o valor do campo.
+        span.parentNode.children[0].value = ""
+        return
+    }
+
+    //deletar o campo
+    span.parentNode.remove();
+}
+
+// select yes or no
+function toggleSelect(event) {
+    // retirar a class .active (dos botões)
+    document.querySelectorAll('.button-select button').forEach(function(button) { button.classList.remove('active')})
+
+    // colocar a class .active nesse botão clicado
+    const button = event.currentTarget
+    button.classList.add('active')
+
+    // atualizar o meu input hidden com o valor selecionado
+    const input = document.querySelector('[name="open_on_weekends"]')
+
+    input.value = button.dataset.value
+}
+
